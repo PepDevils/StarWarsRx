@@ -13,6 +13,7 @@
 		69674176202DD50E0025528C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69674174202DD50E0025528C /* Main.storyboard */; };
 		69674178202DD50E0025528C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69674177202DD50E0025528C /* Assets.xcassets */; };
 		6967417B202DD50E0025528C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69674179202DD50E0025528C /* LaunchScreen.storyboard */; };
+		ADA4EBAEB28B70E0BCE81F38 /* Pods_StarWarsRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A0B7FAB6ECE0126B81C2F8 /* Pods_StarWarsRx.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA4EBAEB28B70E0BCE81F38 /* Pods_StarWarsRx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

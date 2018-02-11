@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  StarWarsRx
 //
-//  Created by DEZVEZESDEZ on 09/02/2018.
+//  Created by Pepdevils on 09/02/2018.
 //  Copyright © 2018 Pepdevils. All rights reserved.
 //
 
