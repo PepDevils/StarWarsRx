@@ -59,7 +59,7 @@ class FirstViewController: UIViewController {
         URLSession.shared.dataTask(with:url){
             (data,response,err) in
             guard let data = data else {return}
-            let dataString = String(data: data,encoding: .utf8)
+           // let dataString = String(data: data,encoding: .utf8)
     
             
             do {
@@ -69,9 +69,9 @@ class FirstViewController: UIViewController {
                 print(json)
                 //let people = StarWarsPeople(json:json)
                 let people = SWResult(json:json)
-                let charcareter = people.results
+                //let charcareter = people.results
                 print(people)
-                print(charcareter )
+                //print(charcareter )
                 
             } catch let jsonErr{
                 print(jsonErr)
