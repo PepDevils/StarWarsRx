@@ -10,31 +10,27 @@
 import UIKit
 import RxSwift
 
+struct AllPeople:Decodable {
+    let allpeople: [String]
+}
+
 struct SWResult:Decodable {
-    let results: [String]?
-    let count: Int?
-    let next: String?
+    let results: [StarWarsPeople]
+    let count: Int
+    let next: String
     let previous: String?
-    
-    init (json:[String:Any]){
-        results = json["results"] as? [String] ?? [""]
-        count = json["count"] as? Int ?? 0
-        next = json["next"] as? String ?? ""
-        previous = json["previous"] as? String ?? ""
-    }
     
 }
 
 struct StarWarsPeople:Decodable {
-    let nome:String?
-    let specie:[String]?
-    let numVeic:[String]?
+    let name:String
+    let species:[String]
+    let vehicles:[String]
+    let gender:String
+    let homeworld:String
+    let skin_color:String
     
-    let genero:String?
-    let planeta:String?
-    let cor:String?
-    let listaCarros:[String]?
-    
+    /*
     init (json:[String:Any]){
         nome = json["name"] as? String ?? ""
         specie = json["species"] as?[String] ?? [""]
@@ -45,6 +41,7 @@ struct StarWarsPeople:Decodable {
         cor = json["skin_color"] as? String ?? ""
         listaCarros = json["vehicles"] as? [String] ?? [""]
     }
+ */
 }
 
 class FirstViewController: UIViewController {
@@ -59,20 +56,22 @@ class FirstViewController: UIViewController {
         URLSession.shared.dataTask(with:url){
             (data,response,err) in
             guard let data = data else {return}
-           // let dataString = String(data: data,encoding: .utf8)
     
-            
             do {
-                // let starwarspeople = try JSONDecoder.decode([StarWarsPeople].self, from: data)
+                 //let starwarspeople = try JSONDecoder.decode([StarWarsPeople].self, from: data)
+                
+                let starwarspeople = try JSONDecoder().decode(SWResult.self, from: data)
+                print(starwarspeople)
+                /*
                 
                 guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else {return}
                 print(json)
                 //let people = StarWarsPeople(json:json)
                 let people = SWResult(json:json)
-                //let charcareter = people.results
+                let charcareter = people.results
                 print(people)
                 //print(charcareter )
-                
+                */
             } catch let jsonErr{
                 print(jsonErr)
             }
