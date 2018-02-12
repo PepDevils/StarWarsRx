@@ -10,15 +10,25 @@
 import UIKit
 import RxSwift
 
+/*
 struct AllPeople:Decodable {
     let allpeople: [String]
-}
+}*/
 
 struct SWResult:Decodable {
     let results: [StarWarsPeople]
     let count: Int
     let next: String
     let previous: String?
+    
+    /*
+    
+    init(count: Int, results: [StarWarsPeople],next:String, previous:String) {
+        self.count = count
+        self.results = results
+        self.next = next
+        self.previous = previous
+    }*/
     
 }
 
@@ -30,26 +40,21 @@ struct StarWarsPeople:Decodable {
     let homeworld:String
     let skin_color:String
     
-    /*
-    init (json:[String:Any]){
-        nome = json["name"] as? String ?? ""
-        specie = json["species"] as?[String] ?? [""]
-        numVeic = json["vehicles"] as? [String] ?? [""]
-        
-        genero = json["gender"] as? String ?? ""
-        planeta = json["homeworld"] as? String ?? ""
-        cor = json["skin_color"] as? String ?? ""
-        listaCarros = json["vehicles"] as? [String] ?? [""]
-    }
- */
 }
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDelegate , UITableViewDataSource{
+    
 
+    @IBOutlet weak var tvstarwarspeople: UITableView!
+    
+    	
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let jsonString = "https://swapi.co/api/people/1"
+        //for table config
+        tvstarwarspeople.delegate = self
+        tvstarwarspeople.dataSource = self
+        
         let jsonString = "https://swapi.co/api/people/"
         guard let url = URL(string:jsonString) else {return}
         
@@ -58,35 +63,39 @@ class FirstViewController: UIViewController {
             guard let data = data else {return}
     
             do {
-                 //let starwarspeople = try JSONDecoder.decode([StarWarsPeople].self, from: data)
                 
                 let starwarspeople = try JSONDecoder().decode(SWResult.self, from: data)
                 print(starwarspeople)
-                /*
                 
-                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else {return}
-                print(json)
-                //let people = StarWarsPeople(json:json)
-                let people = SWResult(json:json)
-                let charcareter = people.results
-                print(people)
-                //print(charcareter )
-                */
+
             } catch let jsonErr{
                 print(jsonErr)
             }
-            
-            
-            
         }.resume()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // return starwarspeople.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell  = tvstarwarspeople.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+      //  cell.textLabel?.text  = starwarspeople.results[indexPath.row].name
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //clique para entrar na detail view
+        
+        
+    }
+    
+
 
 
 }

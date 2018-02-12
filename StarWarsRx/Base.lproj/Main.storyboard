@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,26 +19,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw1-j3-dnH">
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vw1-j3-dnH">
                                 <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Guys" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                        <rect key="frame" x="119" y="194" width="81" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" text="Star Wars People" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                                        <rect key="frame" x="16" y="8" width="0.0" height="43"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Leu-dn-oBn">
+                                        <rect key="frame" x="16" y="59" width="0.0" height="344"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="trailing" secondItem="vw1-j3-dnH" secondAttribute="trailingMargin" id="4dZ-tC-vpz"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="Leu-dn-oBn" secondAttribute="leading" id="ARF-eB-Kht"/>
+                                    <constraint firstItem="Leu-dn-oBn" firstAttribute="bottom" secondItem="vw1-j3-dnH" secondAttribute="bottomMargin" id="FDL-M9-QGy"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="leading" secondItem="vw1-j3-dnH" secondAttribute="leadingMargin" id="Lfv-1d-iM7"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="vw1-j3-dnH" secondAttribute="topMargin" id="Yy6-ar-LdR"/>
+                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="trailing" secondItem="Leu-dn-oBn" secondAttribute="trailing" id="tYI-6J-Rja"/>
+                                    <constraint firstItem="Leu-dn-oBn" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="uLv-nH-z2p"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="edI-a8-cKM"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vw1-j3-dnH" secondAttribute="trailing" id="AfU-A5-Zai"/>
+                            <constraint firstItem="vw1-j3-dnH" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="HGn-vR-VM1"/>
+                            <constraint firstItem="vw1-j3-dnH" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="KYo-WF-a05"/>
+                            <constraint firstItem="vw1-j3-dnH" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="tZk-ul-BYh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tvstarwarspeople" destination="Leu-dn-oBn" id="FIp-M1-9aD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
