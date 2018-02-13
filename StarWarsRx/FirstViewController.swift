@@ -9,26 +9,13 @@
 
 import UIKit
 import RxSwift
-
-/*
-struct AllPeople:Decodable {
-    let allpeople: [String]
-}*/
+import RxCocoa
 
 struct SWResult:Decodable {
     let results: [StarWarsPeople]
     let count: Int
     let next: String
     let previous: String?
-    
-    /*
-    
-    init(count: Int, results: [StarWarsPeople],next:String, previous:String) {
-        self.count = count
-        self.results = results
-        self.next = next
-        self.previous = previous
-    }*/
     
 }
 
@@ -42,19 +29,20 @@ struct StarWarsPeople:Decodable {
     
 }
 
-class FirstViewController: UIViewController, UITableViewDelegate , UITableViewDataSource{
+class FirstViewController: UIViewController   /*, UITableViewDelegate , UITableViewDataSource*/{
     
+    var disposeBag = DisposeBag()
 
     @IBOutlet weak var tvstarwarspeople: UITableView!
-    
     	
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //for table config
+        /*
         tvstarwarspeople.delegate = self
         tvstarwarspeople.dataSource = self
-        
+        */
         let jsonString = "https://swapi.co/api/people/"
         guard let url = URL(string:jsonString) else {return}
         
@@ -63,9 +51,30 @@ class FirstViewController: UIViewController, UITableViewDelegate , UITableViewDa
             guard let data = data else {return}
     
             do {
+                //https://stackoverflow.com/questions/46545461/rxswift-in-swift-4-binding-data-to-a-tableview
                 
-                let starwarspeople = try JSONDecoder().decode(SWResult.self, from: data)
+                //self.tvstarwarspeople.estimatedRowHeight = 90
+                
+                let starwarspeople:SWResult = try JSONDecoder().decode(SWResult.self, from: data)
                 print(starwarspeople)
+                
+                let people:[StarWarsPeople] = starwarspeople.results
+                
+                let swresultobs:Observable<[StarWarsPeople]> = Observable.just(people).observeOn(MainScheduler.instance)
+                swresultobs.observeOn(MainScheduler.instance).bind(to: self.tvstarwarspeople.rx.items(cellIdentifier: "cell")) {
+                    _, person, cell in
+                    
+                    if let cellToUse = cell as? TableViewCell{
+                        cellToUse.lbname.text = person.name
+
+                    }
+                    
+                    }.disposed(by: self.disposeBag)
+                
+            self.tvstarwarspeople.rx.modelSelected(StarWarsPeople.self).subscribe(onNext:{
+                    person in
+                    print(person.name)
+                }).disposed(by: self.disposeBag)
                 
 
             } catch let jsonErr{
@@ -78,25 +87,6 @@ class FirstViewController: UIViewController, UITableViewDelegate , UITableViewDa
         super.didReceiveMemoryWarning()
         
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return starwarspeople.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tvstarwarspeople.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-      //  cell.textLabel?.text  = starwarspeople.results[indexPath.row].name
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //clique para entrar na detail view
-        
-        
-    }
-    
-
-
 
 }
 

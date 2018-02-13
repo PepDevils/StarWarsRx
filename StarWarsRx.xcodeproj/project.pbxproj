@@ -14,6 +14,7 @@
 		69674178202DD50E0025528C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69674177202DD50E0025528C /* Assets.xcassets */; };
 		6967417B202DD50E0025528C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69674179202DD50E0025528C /* LaunchScreen.storyboard */; };
 		ADA4EBAEB28B70E0BCE81F38 /* Pods_StarWarsRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A0B7FAB6ECE0126B81C2F8 /* Pods_StarWarsRx.framework */; };
+		DB0BF82E203321B60067C241 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0BF82D203321B60067C241 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6967417C202DD50E0025528C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9A0B7FAB6ECE0126B81C2F8 /* Pods_StarWarsRx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWarsRx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E152FAD61777366AE6D731 /* Pods-StarWarsRx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsRx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StarWarsRx/Pods-StarWarsRx.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0BF82D203321B60067C241 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				69674177202DD50E0025528C /* Assets.xcassets */,
 				69674179202DD50E0025528C /* LaunchScreen.storyboard */,
 				6967417C202DD50E0025528C /* Info.plist */,
+				DB0BF82D203321B60067C241 /* TableViewCell.swift */,
 			);
 			path = StarWarsRx;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69674173202DD50E0025528C /* SecondViewController.swift in Sources */,
+				DB0BF82E203321B60067C241 /* TableViewCell.swift in Sources */,
 				6967416F202DD50E0025528C /* AppDelegate.swift in Sources */,
 				69674171202DD50E0025528C /* FirstViewController.swift in Sources */,
 			);
