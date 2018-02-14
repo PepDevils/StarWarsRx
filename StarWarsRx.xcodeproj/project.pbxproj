@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6940D8B620343D0800935361 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6940D8B520343D0800935361 /* ApiClient.swift */; };
+		6940D8BC203459F800935361 /* SWResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6940D8BB203459F800935361 /* SWResultsModel.swift */; };
+		6940D8BE2034615900935361 /* SWPeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6940D8BD2034615900935361 /* SWPeopleModel.swift */; };
 		6967416F202DD50E0025528C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6967416E202DD50E0025528C /* AppDelegate.swift */; };
 		69674171202DD50E0025528C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69674170202DD50E0025528C /* FirstViewController.swift */; };
 		69674173202DD50E0025528C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69674172202DD50E0025528C /* SecondViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		5E2D82E266850A078A3126EE /* Pods-StarWarsRx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsRx.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarWarsRx/Pods-StarWarsRx.release.xcconfig"; sourceTree = "<group>"; };
+		6940D8B520343D0800935361 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		6940D8BB203459F800935361 /* SWResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWResultsModel.swift; sourceTree = "<group>"; };
+		6940D8BD2034615900935361 /* SWPeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeopleModel.swift; sourceTree = "<group>"; };
 		6967416B202DD50E0025528C /* StarWarsRx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsRx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6967416E202DD50E0025528C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69674170202DD50E0025528C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,9 @@
 				69674179202DD50E0025528C /* LaunchScreen.storyboard */,
 				6967417C202DD50E0025528C /* Info.plist */,
 				DB0BF82D203321B60067C241 /* TableViewCell.swift */,
+				6940D8B520343D0800935361 /* ApiClient.swift */,
+				6940D8BB203459F800935361 /* SWResultsModel.swift */,
+				6940D8BD2034615900935361 /* SWPeopleModel.swift */,
 			);
 			path = StarWarsRx;
 			sourceTree = "<group>";
@@ -227,8 +236,11 @@
 			files = (
 				69674173202DD50E0025528C /* SecondViewController.swift in Sources */,
 				DB0BF82E203321B60067C241 /* TableViewCell.swift in Sources */,
+				6940D8BC203459F800935361 /* SWResultsModel.swift in Sources */,
 				6967416F202DD50E0025528C /* AppDelegate.swift in Sources */,
+				6940D8BE2034615900935361 /* SWPeopleModel.swift in Sources */,
 				69674171202DD50E0025528C /* FirstViewController.swift in Sources */,
+				6940D8B620343D0800935361 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

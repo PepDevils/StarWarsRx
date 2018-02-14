@@ -11,76 +11,43 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-struct SWResult:Decodable {
-    let results: [StarWarsPeople]
-    let count: Int
-    let next: String
-    let previous: String?
-    
-}
-
-struct StarWarsPeople:Decodable {
-    let name:String
-    let species:[String]
-    let vehicles:[String]
-    let gender:String
-    let homeworld:String
-    let skin_color:String
-    
-}
-
-class FirstViewController: UIViewController   /*, UITableViewDelegate , UITableViewDataSource*/{
+class FirstViewController: UIViewController {
     
     var disposeBag = DisposeBag()
+    private let apiClient = APIClient()
 
     @IBOutlet weak var tvstarwarspeople: UITableView!
     	
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //for table config
-        /*
-        tvstarwarspeople.delegate = self
-        tvstarwarspeople.dataSource = self
-        */
-        let jsonString = "https://swapi.co/api/people/"
-        guard let url = URL(string:jsonString) else {return}
+        let re: Observable<SWResultsModel> = self.apiClient.send()
         
-        URLSession.shared.dataTask(with:url){
-            (data,response,err) in
-            guard let data = data else {return}
-    
-            do {
-                //https://stackoverflow.com/questions/46545461/rxswift-in-swift-4-binding-data-to-a-tableview
+        re.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { r in
+                let people:[SWPeopleModel] = r.results
                 
-                //self.tvstarwarspeople.estimatedRowHeight = 90
+                let swresultobs:Observable<[SWPeopleModel]> = Observable
+                    .just(people)
+                    .observeOn(MainScheduler.instance)
                 
-                let starwarspeople:SWResult = try JSONDecoder().decode(SWResult.self, from: data)
-                print(starwarspeople)
+                self.tvstarwarspeople.estimatedRowHeight = 90
                 
-                let people:[StarWarsPeople] = starwarspeople.results
-                
-                let swresultobs:Observable<[StarWarsPeople]> = Observable.just(people).observeOn(MainScheduler.instance)
-                swresultobs.observeOn(MainScheduler.instance).bind(to: self.tvstarwarspeople.rx.items(cellIdentifier: "cell")) {
-                    _, person, cell in
-                    
-                    if let cellToUse = cell as? TableViewCell{
-                        cellToUse.lbname.text = person.name
-
+                swresultobs.bind(to: self.tvstarwarspeople.rx.items(cellIdentifier: "cell")) { index, person, cell in
+                        if let cellToUse = cell as? TableViewCell{
+                            cellToUse.lbname.text = person.name
+                            //cellToUse.lbname.adjustsFontSizeToFitWidth = true
+                        }
                     }
-                    
-                    }.disposed(by: self.disposeBag)
-                
-            self.tvstarwarspeople.rx.modelSelected(StarWarsPeople.self).subscribe(onNext:{
-                    person in
-                    print(person.name)
-                }).disposed(by: self.disposeBag)
-                
+                    .disposed(by: self.disposeBag)
+            
+                },
+                onError: { errors in
+                    print(errors)
+                }
+            )
 
-            } catch let jsonErr{
-                print(jsonErr)
-            }
-        }.resume()
     }
 
     override func didReceiveMemoryWarning() {
