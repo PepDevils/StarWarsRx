@@ -10,120 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StarWarsRx/FirstViewController.swift"
-            timestampString = "540225010.975508"
+            timestampString = "540592513.824105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StarWarsRx/FirstViewController.swift"
-            timestampString = "540225010.976889"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "FirstViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StarWarsRx.FirstViewController.__deallocating_deinit"
-                  moduleName = "StarWarsRx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonhsmith/Documents/StarWarsRx/StarWarsRx/FirstViewController.swift"
-                  timestampString = "540168200.96773"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StarWarsRx.FirstViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; StarWarsRx.FirstViewController"
-                  moduleName = "StarWarsRx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonhsmith/Documents/StarWarsRx/StarWarsRx/FirstViewController.swift"
-                  timestampString = "540168200.985177"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StarWarsRx.FirstViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; StarWarsRx.FirstViewController"
-                  moduleName = "StarWarsRx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonhsmith/Documents/StarWarsRx/StarWarsRx/FirstViewController.swift"
-                  timestampString = "540168200.99641"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "283">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StarWarsRx.FirstViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;StarWarsRx.FirstViewController&gt;"
-                  moduleName = "StarWarsRx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonhsmith/Documents/StarWarsRx/StarWarsRx/FirstViewController.swift"
-                  timestampString = "540168201.028342"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "StarWarsRx.FirstViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;StarWarsRx.FirstViewController&gt;"
-                  moduleName = "StarWarsRx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonhsmith/Documents/StarWarsRx/StarWarsRx/FirstViewController.swift"
-                  timestampString = "540168201.039011"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StarWarsRx/FirstViewController.swift"
-            timestampString = "540225010.977962"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -135,12 +26,58 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StarWarsRx/FirstViewController.swift"
-            timestampString = "540225010.978853"
+            timestampString = "540592513.824808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "110"
+            endingLineNumber = "110">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarWarsRx/FirstViewController.swift"
+            timestampString = "540592513.825197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "workSWdata(r:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarWarsRx/FirstViewController.swift"
+            timestampString = "540592513.825604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "processrepeat(r:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarWarsRx/FirstViewController.swift"
+            timestampString = "540592513.826051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "processrepeat(r:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

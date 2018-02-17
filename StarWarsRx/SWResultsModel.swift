@@ -11,7 +11,7 @@ import Foundation
 struct SWResultsModel: Decodable{
     let results: [SWPeopleModel]
     let count: Int
-    let next: String
+    let next: String?
     let previous: String?
     
 }
