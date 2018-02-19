@@ -24,6 +24,10 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //table
+        self.tvstarwarspeople.layer.cornerRadius = 10
+        //self.tvstarwarspeople.layer.masksToBounds = true
+        
         let re: Observable<SWResultsModel> = self.apiClient.getSWPeople()
         
         re.subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
