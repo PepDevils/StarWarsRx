@@ -47,7 +47,9 @@ class FirstViewController: UIViewController {
         if(r.previous == nil){
             //first data
             self.people.value = r.results
-            self.tvstarwarspeople.estimatedRowHeight = 400
+            self.tvstarwarspeople.rowHeight = UITableViewAutomaticDimension
+            self.tvstarwarspeople.estimatedRowHeight = 200
+            
             self.people.asObservable().bind(to: self.tvstarwarspeople.rx.items(cellIdentifier: "cell")) { index, person, cell in
                 if let cellToUse = cell as? TableViewCell{
                     cellToUse.lbname.text = person!.name
@@ -58,9 +60,14 @@ class FirstViewController: UIViewController {
 
                     cellToUse.lbgender.text = person!.gender
                     cellToUse.lbworld.text = person!.homeworld
-                    cellToUse.lbspecies.text = person!.species[0]
+                    if(person!.species[0] != nil){
+                        cellToUse.lbspecies.text = person!.species[0]
+
+                    }else{
+                        cellToUse.lbspecies.text = "N/a"
                     }
-                }
+                 }
+            }
                 .disposed(by: self.disposeBag)
             
             processrepeat(r: r)
